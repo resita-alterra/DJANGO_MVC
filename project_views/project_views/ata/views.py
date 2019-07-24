@@ -54,7 +54,10 @@ def inputblog(request):
     else:
         form = BlogForm()
     return render(request, 'inputblog.html',{'form':form})
-    
+
 def masukblog(request, id_blog):
-    hasil = "blog"+str(id_blog)+".html"
-    return render(request, hasil)
+    hasil = Blog.objects.get(pk=id_blog)
+    return render(request, 'masukblog.html',{'blog':hasil} )
+# def masukblog(request, id_blog):
+#     hasil = "blog"+str(id_blog)+".html"
+#     return render(request, hasil)

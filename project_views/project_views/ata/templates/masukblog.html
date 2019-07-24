@@ -1,0 +1,34 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block title%}
+<title>Blog</title>
+{% endblock %}
+
+{% block blog %}Blog{% endblock %}
+
+{% block content%}
+<div class="container">
+    <div class="row" style="margin: 50px;">
+        <div class="col-12">
+            <img src="{{ blog.nama_file_image }}" style="width: 100%">
+        </div>
+        <div class="col-6 tanggal">
+            <p>{{blog.tanggal_dipost}}</p>
+        </div>
+        <div class="col-6 komen" style="text-align: right;">
+            <p>{{ blog.komen }} Comments</p>
+        </div>
+        <div class="col-12" style="display: block; align-content: center;">            
+            <h3>{{ blog.title }}</h3>
+        </div>
+        <div class="col-12">
+            <div class = "post_body">
+                {{ blog.isi }}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
